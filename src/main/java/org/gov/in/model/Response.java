@@ -1,20 +1,21 @@
 package org.gov.in.model;
 
-import java.util.List;
 import lombok.Builder;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 @Builder
 public class Response {
 
-  private int statusCode;
-  private String statusMsg;
-  private ErrorDetails errorDetails;
+    private int statusCode;
+    private String statusMsg;
+    private ErrorDetails errorDetails;
 
-  private JobDetails jobDetails;
+    private JobDetails jobDetails;
 
-  private List<JobDetails> jobDetailsList;
+    private List<JobDetails> jobDetailsList;
 
 
 }

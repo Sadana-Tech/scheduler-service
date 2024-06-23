@@ -6,13 +6,13 @@ import org.gov.in.model.Response;
 
 public interface JobDetailsService {
 
-  public Response save(JobDetails jobDetails);
+    public org.gov.in.entity.JobDetails save(JobDetails jobDetails);
 
-  public Response fetchByName(String jobName);
+    public Response fetchByName(String jobName);
 
-  public Response fetchById(int jobId);
+     Response fetchById(int id);
 
-  public Response fetchAll();
+    public Response fetchAll();
 
-  public Response fetchByStatus(String status);
+    public Response fetchByStatus(String status);
 }

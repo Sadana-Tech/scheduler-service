@@ -5,6 +5,6 @@ import lombok.Getter;
 
 @Getter
 public enum JobStatus {
-  IN_PROGRESS, COMPLETED, INTERRUPTED;
-  private String status;
+    IN_PROGRESS, COMPLETED, INTERRUPTED,FAILED;
+    private String status;
 }

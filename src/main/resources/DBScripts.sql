@@ -1,9 +1,12 @@
-create schema scheduler_details;
+CREATE DATABASE  IF NOT EXISTS `scheduler_details`
 
-CREATE TABLE `scheduler_details`.`job_details` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `job_name` VARCHAR(45) NULL,
-  `start_dt` DATETIME DEFAULT CURRENT_TIMESTAMP,
-  `end_dt` DATETIME NULL,
-  `status` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`));
+DROP TABLE IF EXISTS `job_details`;
+
+CREATE TABLE `job_details` (
+  `id` int NOT NULL,
+  `job_name` varchar(255) DEFAULT NULL,
+  `start_dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `end_dt` timestamp DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ;

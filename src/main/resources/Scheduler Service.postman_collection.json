@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "1a16c0b4-a2d2-41a7-ad01-3550e80bfe4d",
+		"name": "Scheduler Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7086134",
+		"_collection_link": "https://cloudy-star-804621.postman.co/workspace/Utkrasta~b9a78057-80d9-4706-9b20-ba1b27bcbeb0/collection/7086134-1a16c0b4-a2d2-41a7-ad01-3550e80bfe4d?action=share&source=collection_link&creator=7086134"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jobName\":\"Push Notification\",\r\n    \"apiURL\":\"/api/v1/push\",\r\n    \"baseURL\":\"http://localhost:8080\",\r\n    \"methodType\" : \"POST\",\r\n    \"cron\" :\"3 * * * * *\",\r\n    \"jsonBody\":\"{\\\"title\\\":\\\"title\\\",\\\"body\\\":\\\"dasfasfasfasfasfasfasfasfasfasfafs\\\",\\\"tokens\\\":[\\\"asfsdfsdfssssssssssssssssssssssssssssssssssssssssssss\\\"]}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8089/api/v1/schedule/job",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"api",
+						"v1",
+						"schedule",
+						"job"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jobId\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8089/api/v1/schedule/remove",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"api",
+						"v1",
+						"schedule",
+						"remove"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

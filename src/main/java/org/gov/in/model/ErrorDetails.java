@@ -7,7 +7,7 @@ import lombok.Data;
 @Builder
 public class ErrorDetails {
 
-  private int errorCode;
-  private String errorMsg;
+    private int errorCode;
+    private String errorMsg;
 
 }

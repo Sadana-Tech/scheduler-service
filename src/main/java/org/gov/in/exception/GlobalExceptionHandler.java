@@ -13,30 +13,27 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @Slf4j
 public class GlobalExceptionHandler {
 
-  @ExceptionHandler(JobSchedulerException.class)
-  public ResponseEntity<Response> handleFirebaseNotificationException(JobSchedulerException e) {
-    log.error("Error occured :  " + e.getMessage());
-    return new ResponseEntity<>(
-        Response.builder().statusCode(HttpStatus.INTERNAL_SERVER_ERROR.value())
-            .statusMsg(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase())
-            .errorDetails(
-                ErrorDetails.builder().errorCode(StatusEnum.JOB_SCHEDULE_ERROR.getStatusCode())
-                    .errorMsg(e.getMessage()).build())
-            .build(),
-        HttpStatus.INTERNAL_SERVER_ERROR);
-  }
+    @ExceptionHandler(JobSchedulerException.class)
+    public ResponseEntity<Response> handleFirebaseNotificationException(JobSchedulerException e) {
+        log.error("Error occured :  " + e.getMessage());
+        return new ResponseEntity<>(
+                Response.builder().statusCode(HttpStatus.INTERNAL_SERVER_ERROR.value())
+                        .statusMsg(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase())
+                        .errorDetails(ErrorDetails.builder().errorCode(StatusEnum.JOB_SCHEDULE_ERROR.getStatusCode())
+                                .errorMsg(e.getMessage()).build())
+                        .build(),
+                HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 
-  @ExceptionHandler(Exception.class)
-  public ResponseEntity<Response> handleHttpResponseException(Exception e) {
-    log.error("Error occured :  " + e.getMessage());
-    return new ResponseEntity<>(
-        Response.builder().statusCode(HttpStatus.INTERNAL_SERVER_ERROR.value())
-            .statusMsg(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase())
-            .errorDetails(
-                ErrorDetails.builder().errorCode(StatusEnum.JOB_SCHEDULE_ERROR.getStatusCode())
-                    .errorMsg(e.getMessage()).build())
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Response> handleHttpResponseException(Exception e) {
+        log.error("Error occured :  " + e.getMessage());
+        return new ResponseEntity<>(Response.builder().statusCode(HttpStatus.INTERNAL_SERVER_ERROR.value())
+                .statusMsg(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase())
+                .errorDetails(ErrorDetails.builder().errorCode(StatusEnum.JOB_SCHEDULE_ERROR.getStatusCode())
+                        .errorMsg(e.getMessage()).build())
 
-            .build(), HttpStatus.INTERNAL_SERVER_ERROR);
-  }
+                .build(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 
 }
